@@ -1,5 +1,8 @@
 from flask import url_for, request
-from app import app
+from hello import create_app
+
+
+app = create_app()
 
 
 def print_urls_for_views():
