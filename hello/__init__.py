@@ -32,3 +32,5 @@ def create_app():
     @app.route('/news', methods=['GET'])
     def shows_news():
         return "Today’s news is ..."
+
+    return app

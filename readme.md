@@ -1,4 +1,4 @@
-# hello_flask Web Application
+# hello Web Application
 
 ## Description
 
@@ -9,7 +9,7 @@ A minimal Web application to introduce Python's Flask framework.
 **Installation via requirements.txt**
 
 ```shell
-$ cd hello_flask
+$ cd COMPSCI-235
 $ py -3 -m venv venv
 $ venv\Scripts\activate
 $ pip install -r requirements.txt
@@ -21,7 +21,7 @@ When using PyCharm, set the virtual environment using 'File'->'Settings' and sel
 
 **Running the application**
 
-From the *hello_flask* directory, and within the activated virtual environment (see *venv\Scripts\activate* above):
+From the *COMPSCI-235* directory, and within the activated virtual environment (see *venv\Scripts\activate* above):
 
 ````shell
 $ flask run
