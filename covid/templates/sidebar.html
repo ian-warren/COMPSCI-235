@@ -1,0 +1,17 @@
+<aside id="sidebar">
+
+    <header>
+        <h1>Editor's picks</h1>
+    </header>
+
+    {% for article in selected_articles %}
+        <div id="article-container">
+            <a href="{{ article.hyperlink }}" >
+                <img src={{ article.image_hyperlink }} class="img-small">
+            </a>
+            <div id="article-description">
+                <p>{{ article.title }}, ({{ article.date }}).</p>
+            </div>
+        </div>
+    {% endfor %}
+</aside>

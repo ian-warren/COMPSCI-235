@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main id="main">
+    <header id="article-header">
+        <h1>{{ articles_title }}</h1>
+    </header>
+
+    <nav style="clear:both">
+            <div style="float:left">
+                {% if first_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{first_article_url}}'">First</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>First</button>
+                {% endif %}
+                {% if prev_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{prev_article_url}}'">Previous</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>Previous</button>
+                {% endif %}
+            </div>
+            <div style="float:right">
+                {% if next_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{next_article_url}}'">Next</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>Next</button>
+                {% endif %}
+                {% if last_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{last_article_url}}'">Last</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>Last</button>
+                {% endif %}
+            </div>
+        </nav>
+
+    {% for article in articles %}
+    <article id="article">
+        <a href="{{article.hyperlink}}" target="_blank">
+            <img src={{article.image_hyperlink}} alt="article image">
+        </a>
+        <h2>{{article.title}}</h2>
+        <p>{{article.first_para}}</p>
+        <div style="float:left">
+            {% for tag in article.tags %}
+            <button class="btn-general" onclick="location.href='{{ tag_urls[tag.name] }}'">{{ tag.name }}</button>
+            {% endfor %}
+        </div>
+        <div style="float:right">
+            {% if article.comments|length > 0 and article.id != show_comments_for_article %}
+                <button class="btn-general" onclick="location.href='{{ article.view_comment_url }}'">{{ article.comments|length }} comments</button>
+            {% endif %}
+            <button class="btn-general" onclick="location.href='{{ article.add_comment_url }}'">Comment</button>
+        </div>
+        {% if article.id == show_comments_for_article %}
+        <div style="clear:both">
+            {% for comment in article.comments %}
+                <p>{{comment.comment_text}}, by {{comment.username}}, {{comment.timestamp}}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </article>
+    {% endfor %}
+
+    <footer>
+        <nav style="clear:both">
+            <div style="float:left">
+                {% if first_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{first_article_url}}'">First</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>First</button>
+                {% endif %}
+                {% if prev_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{prev_article_url}}'">Previous</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>Previous</button>
+                {% endif %}
+            </div>
+            <div style="float:right">
+                {% if next_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{next_article_url}}'">Next</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>Next</button>
+                {% endif %}
+                {% if last_article_url is not none %}
+                    <button class="btn-general" onclick="location.href='{{last_article_url}}'">Last</button>
+                {% else %}
+                    <button class="btn-general-disabled" disabled>Last</button>
+                {% endif %}
+            </div>
+        </nav>
+    </footer>
+</main>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The COVID Pandemic of 2020</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+	
+	<link
+      rel="bookmark"
+	  type="image/x-icon"
+      href="favicon.ico"
+    />
+	
+	<link
+      rel="icon"
+      href="favicon.ico"
+    />
+  </head>
+
+  <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--<script src="../static/iconfont.js"></script>-->
+
+  <body>
+    <div id="body">
+      <!-- Include navigation partial. -->
+      {% include 'navigation.html' %}
+
+      <div id="content-2">
+        <!-- Include header partial. -->
+        {% include 'header.html' %}
+
+        <div id="container">
+          <!-- Main content block to be supplied by page. -->
+          {% block content %} {% endblock %}
+
+          <!-- Include sidebar partial. -->
+          {% include 'sidebar.html' %}
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
