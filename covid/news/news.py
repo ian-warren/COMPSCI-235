@@ -8,7 +8,7 @@ from flask_wtf import FlaskForm
 from wtforms import TextAreaField, HiddenField, SubmitField
 from wtforms.validators import DataRequired, Length, ValidationError
 
-import covid.adapters.memory_repository as repo
+import covid.adapters.repository as repo
 import covid.utilities.utilities as utilities
 import covid.news.services as services
 

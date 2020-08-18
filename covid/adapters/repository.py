@@ -1,11 +1,11 @@
 import abc
 from typing import List
-
-from sqlalchemy import desc, asc
+from datetime import date
 
 from covid.domain.model import User, Article, Tag, Comment
 
-from datetime import date
+
+repo_instance = None
 
 
 class RepositoryException(Exception):

@@ -10,7 +10,7 @@ from functools import wraps
 
 import covid.utilities.utilities as utilities
 import covid.authentication.services as services
-import covid.adapters.memory_repository as repo
+import covid.adapters.repository as repo
 
 # Configure Blueprint.
 authentication_blueprint = Blueprint(

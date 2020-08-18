@@ -2,7 +2,7 @@
 
 ## Description
 
-A Web application that demonstrates use of Python's Flask framework. The application makes use of libraries such as the Jinja templating library and WTForms. Architectural design patterns including Repository and Service Layer have been used to design the application. The application uses Flask Blueprints to maintain a separation of concerns between application functions. Testing includes unit and end-to-end testing using the pytest and coverage tools. 
+A Web application that demonstrates use of Python's Flask framework. The application makes use of libraries such as the Jinja templating library and WTForms. Architectural design patterns and principles including Repository, Dependency Inversion and Single Responsibility have been used to design the application. The application uses Flask Blueprints to maintain a separation of concerns between application functions. Testing includes unit and end-to-end testing using the pytest tool. 
 
 ## Installation
 
@@ -27,7 +27,6 @@ From the *COMPSCI-235* directory, and within the activated virtual environment (
 $ flask run
 ```` 
 
-More news articles are to be added to the data file (*COMPSCI-235/covid/adapters/data/news_articles.csv*) used to populate the repository.
 
 ## Configuration
 
@@ -54,24 +53,4 @@ assigns TEST_DATA_PATH with the following value (the use of os.path.join and os.
 
 You can then run tests from within PyCharm.
 
-To run all tests using pytest from a terminal window running the virtual environment, you should first install the COVID-19 project in the virtual environment. From within the *COVID-19* directory:
-
-````
-$ pip install -e .
-````
-
-To run all tests within a terminal window, from within the *COMPSCI-235* directory:
-
-```
-$ pytest
-```
-
-To measure code coverage and generate a HTML report, from within the *COMPSCI-235* directory:
-
-````
-$ coverage run -m pytest
-$ coverage html
-````
-
-The generated report is stored in the *htmlcov* directory. Open the *COMPSCI-235/htmlcov/index.html* file in a Web browser to see the report.
  

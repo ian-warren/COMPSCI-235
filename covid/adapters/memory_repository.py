@@ -11,9 +11,6 @@ from covid.adapters.repository import AbstractRepository, RepositoryException
 from covid.domain.model import Article, Tag, User, Comment, make_tag_association, make_comment
 
 
-repo_instance = None
-
-
 class MemoryRepository(AbstractRepository):
     # Articles ordered by date, not id. id is assumed unique.
 
@@ -157,7 +154,7 @@ class MemoryRepository(AbstractRepository):
 
 
 def read_csv_file(filename: str):
-    with open(filename) as infile:
+    with open(filename, encoding='utf-8-sig') as infile:
         reader = csv.reader(infile)
 
         # Read first line of the the CSV file.
@@ -184,7 +181,6 @@ def load_articles_and_tags(data_path: str, repo: MemoryRepository):
             if tag not in tags.keys():
                 tags[tag] = list()
             tags[tag].append(article_key)
-
         del data_row[-number_of_tags:]
 
         # Create Article object.

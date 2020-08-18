@@ -4,7 +4,8 @@ import os
 
 from flask import Flask
 
-import covid.adapters.memory_repository as repo
+import covid.adapters.repository as repo
+from covid.adapters.memory_repository import MemoryRepository, populate
 
 
 def create_app(test_config=None):
@@ -18,13 +19,13 @@ def create_app(test_config=None):
     data_path = os.path.join('covid', 'adapters', 'data')
 
     if test_config is not None:
-        # Load test configuration, and override any configuration settings.
+        # Load test configuration, and overrride any configuration settings.
         app.config.from_mapping(test_config)
         data_path = app.config['TEST_DATA_PATH']
 
     # Create the MemoryRepository implementation for a memory-based repository.
-    repo.repo_instance = repo.MemoryRepository()
-    repo.populate(data_path, repo.repo_instance)
+    repo.repo_instance = MemoryRepository()
+    populate(data_path, repo.repo_instance)
 
     # Build the application - these steps require an application context.
     with app.app_context():

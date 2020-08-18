@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, url_for, session
 
-import covid.adapters.memory_repository as repo
+import covid.adapters.repository as repo
 import covid.utilities.services as services
 
 
