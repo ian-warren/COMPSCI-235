@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from markupsafe import escape
 
 
@@ -28,6 +28,11 @@ def create_app():
     def show_subpath(subpath):
         # Show the subpath after /path/
         return 'Subpath %s' % escape(subpath)
+
+    @app.route('/greeting/')
+    def greeting():
+        name = request.args.get('name')
+        return 'Kia Ora %s!' % escape(name)
 
     @app.route('/news', methods=['GET'])
     def shows_news():
