@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    {% extends "parent.html" %}
+
+    {% block main %}
+        <p>In child.html, message is {{ message }}</p>
+        <p style="font-style: italic">This is content defined in the child template</p>
+    {% endblock %}
+</body>
+</html>
