@@ -19,7 +19,7 @@ def create_app(test_config=None):
     data_path = os.path.join('covid', 'adapters', 'data')
 
     if test_config is not None:
-        # Load test configuration, and overrride any configuration settings.
+        # Load test configuration, and override any configuration settings.
         app.config.from_mapping(test_config)
         data_path = app.config['TEST_DATA_PATH']
 
