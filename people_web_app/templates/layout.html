@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Famous Leaders</title>
+</head>
+<body>
+    <header>
+        <h1>Famous leaders</h1>
+    </header>
+    <div>
+
+    </div>
+    <div>
+        <ul>
+            <li><a href="{{ list_people_url }}">List all leaders</a></li>
+            <li><a href="{{ find_person_url }}">Find leader by ID</a></li>
+        </ul>
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
