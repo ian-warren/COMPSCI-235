@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    {% extends "child.html" %}
+
+    {% block main %}
+        {{ super() }}
+        <p style="font-style: italic"> This is content is defined in the grandchild template </p>
+    {% endblock %}
+</body>
+</html>
