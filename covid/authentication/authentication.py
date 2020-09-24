@@ -103,7 +103,7 @@ def login_required(view):
 class PasswordValid:
     def __init__(self, message=None):
         if not message:
-            message = u'Your password must be at least 8 characters, and contain an upper case letter, \
+            message = u'Your password must be at least 8 characters, and contain an upper case letter,\
             a lower case letter and a digit'
         self.message = message
 
