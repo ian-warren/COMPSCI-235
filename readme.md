@@ -15,3 +15,5 @@ This repository contains a number of projects, organised into the following bran
 05_hello_jinja
 
 06_people_web_app
+
+07_COVID_web_app_sqlitedb
