@@ -15,13 +15,11 @@ def test_register(client):
     )
     assert response.headers['Location'] == 'http://localhost/authentication/login'
 
-
 @pytest.mark.parametrize(('username', 'password', 'message'), (
         ('', '', b'Your username is required'),
         ('cj', '', b'Your username is too short'),
         ('test', '', b'Your password is required'),
-        ('test', 'test', b'Your password must be at least 8 characters, and contain an upper case letter,\
-            a lower case letter and a digit'),
+        ('test', 'test', b'Your password must be at least 8 characters, and contain an upper case letter, a lower case letter and a digit'),
         ('fmercury', 'Test#6^0', b'Your username is already taken - please supply another'),
 ))
 def test_register_with_invalid_input(client, username, password, message):
