@@ -41,16 +41,16 @@ The *COMPSCI-235/.env* file contains variable settings. They are set with approp
 
 ## Testing
 
-Testing requires that file *COMPSCI-235/tests/conftest.py* be edited to set the value of `TEST_DATA_PATH`. You should set this to the absolute path of the *COMPSCI-235/tests/data* directory. 
+Testing requires that file *COMPSCI-235/tests/conftest.py* be edited to set the values of `TEST_DATA_PATH_MEMORY` and `TEST_DATA_PATH_DATABASE`. You should set these to the absolute paths of the *COMPSCI-235/tests/data/memory* and *COMPSCI-235/tests/data/database* respectively. 
 
 E.g. 
 
-`TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'ian', 'Documents', 'Python dev', 'COVID-19', 'tests', 'data')`
+`TEST_DATA_PATH_MEMORY = os.path.join('C:', os.sep, 'Users', 'ian', 'Documents', 'Python dev', 'COVID-19', 'tests', 'data', 'memory')`
 
-assigns TEST_DATA_PATH with the following value (the use of os.path.join and os.sep ensures use of the correct platform path separator):
+assigns TEST_DATA_PATH_MEMORY with the following value (the use of os.path.join and os.sep ensures use of the correct platform path separator):
 
-`C:\Users\ian\Documents\python-dev\COVID-19\tests\data`
+`C:\Users\ian\Documents\python-dev\COVID-19\tests\data\memory`
 
-You can then run tests from within PyCharm.
+You can then run the tests.
 
  
